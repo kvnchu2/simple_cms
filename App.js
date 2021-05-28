@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, Dimensions } from 'react-native';
+import icon from "./assets/icon.png";
 
 
 export default function App() {
   return(
     <View style={ styles.page}>
-      <Text style={styles.text}>red</Text>
-      <Text style={[styles.text, styles.selectedText]}>blue</Text>
-      <Text style={styles.text}>greens</Text>
+      <Image style={styles.image} source={icon}/>
     </View>
   )
 }
@@ -15,19 +14,14 @@ export default function App() {
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 40,
-    backgroundColor: "#DDD"
+    justifyContent: "center",
+    alignItems: "center"
   },
-  text: {
+  image: {
     flex: 1,
-    textAlign: "center",
-    fontSize: 22,
-    color: "red",
-    backgroundColor: "yellow",
+    borderRadius: 50,
     margin: 10,
-    padding: 5
+    width: Dimensions.get("window").width - 10
   },
   selectedText: {
     backgroundColor: "red",
