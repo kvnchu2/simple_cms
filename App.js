@@ -1,30 +1,28 @@
-import React from 'react';
-import { View, Image, StyleSheet, Dimensions } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 import icon from "./assets/icon.png";
 
 
 export default function App() {
+  const [backgroundColor, setBackgroundColor] = useState("blue");
   return(
-    <View style={ styles.page}>
-      <Image style={styles.image} source={icon}/>
+    <View style={ [styles.container, {backgroundColor}]}>
+      <Text style={styles.button} onPress={() => setBackgroundColor("green")}>green</Text>
+      <Text style={styles.button} onPress={() => setBackgroundColor("red")}>red</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  page: {
+  container: {
     flex: 1,
+    display: "flex",
     justifyContent: "center",
     alignItems: "center"
   },
-  image: {
-    flex: 1,
-    borderRadius: 50,
+  button: {
+    fontSize: 30,
     margin: 10,
-    width: Dimensions.get("window").width - 10
-  },
-  selectedText: {
-    backgroundColor: "red",
-    color: "yellow"
+    padding: 10
   }
 })
