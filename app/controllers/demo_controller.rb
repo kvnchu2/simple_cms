@@ -6,6 +6,6 @@ class DemoController < ApplicationController
   end
 
   def hello
-    redirect_to(:controller => 'demo', :action => 'index')
+    @array = [1,2,3,4,5]
   end
 end
