@@ -12,3 +12,10 @@
 <% end %>
 
 <%= link_to("index page", {:action => 'index'})%>
+
+<br />
+
+ID: <%= @id %><br/>
+ID: <%= params[:id] %> <br />
+Page: <%= @page %><br />
+Next page: <%= @page.to_i + 1%>
